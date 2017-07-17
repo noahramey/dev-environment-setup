@@ -137,7 +137,7 @@ It worked! Rails is now successfully installed!
 
 ## You did it!
 
-I hope this helped setup your dev environment on MacOS. If you have anything you think I should add, please clone this repository and make a PR! I would love feedback of any kind.
+I hope this helped setup your dev environment on MacOS. If you have anything you think I should add, please make a PR! I would love feedback of any kind.
 
 #### License
 
