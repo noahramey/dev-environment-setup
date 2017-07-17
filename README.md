@@ -135,6 +135,14 @@ $ rails new project
 ```
 It worked! Rails is now successfully installed!
 
+#### Optional Setup for Rails
+
+If you plan on making Rails applications using PostgreSQL instead of SQLite, and using RSpec instead of the default testing library `test-unit`, use the following to configure your rails setup:
+```shell
+echo "-d postgresql -T" > ~/.railsrc
+```
+Rails applications you create will use Postgres as the default database and not setup test-unit.
+
 ## You did it!
 
 I hope this helped setup your dev environment on MacOS. If you have anything you think I should add, please make a PR! I would love feedback of any kind.
