@@ -38,9 +38,11 @@ Now we will install Git, a widely used version control system. Git has a simple 
 ```shell
 brew install git # yes it's that easy.
 ```
-Restart iTerm to be safe. I also suggest configuring Git to use your name and email by using the following lines.
+Restart iTerm to be safe. I also suggest configuring Git using the following lines. These store your name and email with Git, set Atom as Git's default editor, and color code Git information.
 ```shell
-git config --global user.name "YOURNAME" # replace YOURNAMEHERE with your name
-git config --global user.email YOUREMAIL # replace YOUREMAILHERE with your email
+git config --global user.name "YOURNAME" # Replace YOURNAMEHERE with your name.
+git config --global user.email YOUREMAIL # Replace YOUREMAILHERE with your email.
+echo "export EDITOR='atom -w'" >> ~/.zshrc # Restart iTerm after this one.
+git config --global color.ui true
 ```
 And you're done! Zsh and Git are successfully installed! Next we're going to install a few packages with Brew.
