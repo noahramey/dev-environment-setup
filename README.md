@@ -80,7 +80,7 @@ ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin16]
 ```
 At first glance, this seems like it would be helpful, but that Ruby version is out of date. We need to be using Ruby-2.2 or above, as Rails 5 requires that version or above. The process we'll be using allows us to install multiple ruby versions and switch between them as needed. Let's get started!
 
-##### Ruby-Install
+#### Ruby-Install
 
 We'll start by using ruby-install, a tool for installing Ruby versions. After that install, we'll be installing Ruby version 2.4.1, the latest stable release of Ruby. The lines below will walk you through this process. In your terminal, enter the following lines to install ruby-install and Ruby-2.4.1. The ruby-install command will take some time.
 ```shell
@@ -88,7 +88,7 @@ $ brew install ruby-install
 $ ruby-install ruby 2.4.1
 ```
 
-##### Chruby
+#### Chruby
 
 Now we'll be installing Chruby, a tool for managing installed ruby versions. Let's start by installing it with Homebrew (isn't Homebrew so helpful?)
 ```shell
@@ -110,7 +110,7 @@ $ ruby -v
 ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin16]
 ```
 
-##### Rails
+#### Rails
 
 This step can be very error prone. I suggest restarting your terminal before starting the Rails installation process. Rails is a web-application framework written in Ruby. It goes hand in hand with Ruby and I suggest it to anyone looking to learn a framework. Let's get started! At this point if you run `rails` in your terminal, you should get an error that looks like this.
 ```shell
