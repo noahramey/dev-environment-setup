@@ -1,10 +1,21 @@
+/*colors {
+  black: rgba(35, 31, 32, 1);
+  red: rgba(187, 68, 48, 1);
+  blue: rgba(126, 189, 194, 1);
+  yellow: rgba(243, 223, 162, 1);
+  white: rgba(239, 230, 221, 1);
+}*/
+
+
+
 body {
   margin: 0 auto;
   max-width: 50em;
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.5;
   padding: 4em 1em;
-  color: #566b78;
+  color: rgba(239, 230, 221, 1);
+  background: rgba(35, 31, 32, 1);
 }
 
 h2 {
@@ -13,12 +24,11 @@ h2 {
 }
 
 h1, h2, strong {
-  color: #333;
+  color: rgba(126, 189, 194, 1);
 }
 
 code, pre {
-  background: #f5f7f9;
-  color: #a7adba;
+  color: rgba(243, 223, 162, 1);
 }
 
 code {
@@ -28,9 +38,9 @@ code {
 
 pre {
   padding: 1em;
-  border-left: 2px solid #69c;
+  border-left: 2px solid rgba(126, 189, 194, 1);
 }
 
 a {
-  color: #e81c4f;
+  color: rgba(187, 68, 48, 1);
 }
