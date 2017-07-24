@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MacOS Developer Setup</title>
+  </head>
+  <body>
+    <header>
+      <h1>MacOS Developer Setup Guide</h1>
+      <p>I used to hate the process of setting up my dev environment on a fresh computer, but with this guide, I've narrowed down the process to keep it simple and help people setup their new computers with ease. Let's get started!</p>
+    </header>
+    <section>
+      <h2>Getting Started with Homebrew</h2>
+      <p>You're going to need a fresh installation of MacOS, along with a user Admin account. I always start by installing <a href="https://brew.sh/">Homebrew</a>, an amazing package manager available on MacOS. Copy and paste the line below into your Terminal. You will be asked for your password at some point during the Homebrew install.</p>
+      <pre>
+        <code>
+          /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        </code>
+      </pre>
+      <p>This will install Homebrew, as well as install Xcode's command line tools, which is Apple's GCC compiler. After the command has finished running, restart your terminal (this is not necessary but I do it to make sure Homebrew has successfully completed the installation).</p>
+    </section>
+    <section>
+      <h2>Applications</h2>
+      <p>Homebrew makes installing packages incredibly simple, but it also helps with installing applications! You can use `brew cask` to install applications without struggling to download disk images for every application. Below I will include lines to download a few of my applications of choice.</p>
+    </section>
+  </body>
+</html>
