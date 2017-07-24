@@ -22,6 +22,68 @@
     <section>
       <h2>Applications</h2>
       <p>Homebrew makes installing packages incredibly simple, but it also helps with installing applications! You can use `brew cask` to install applications without struggling to download disk images for every application. Below I will include lines to download a few of my applications of choice.</p>
+      <pre>
+        <code>
+          $ brew cask install atom # My text editor of choice, but you can use whatever you prefer.
+          $ brew cask install spectacle # For resizing windows with keystrokes. Very helpful.
+          $ brew cask install iterm2 # A better terminal with more options.
+          $ brew cask install alfred # A spotlight replacement.
+          $ brew cask install google-chrome # I suggest this for the Dev tools, also Chrome is just great in general.
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>Zsh and Git</h2>
+      <p>Once you've installed the applications above, go ahead and quit Terminal and open iTerm2. We will be using iTerm2 as our terminal application from here on out. We will be using zsh instead of bash as our shell, as it's more customizable. We will be using <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh</a> to manage our zsh configuration. Copy and paste the line below to install and start using zsh. You will have to enter your password once during installation.</p>
+      <pre>
+        <code>
+          sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        </code>
+      </pre>
+      <p>After installation, you will be using zsh! A nice feature from Oh My Zsh is the ability to use themes. In your home directory <span class="code">~</span>, you will find a file called <span class="code">.zshrc</span>, which will hold all of your zsh configurations. On line 10, you will find <span class="code">ZSH_THEME="robbyrussell"</span>. You can choose your own theme from the <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">Oh My Zsh themes wiki</a> to style your shell as you wish! To change your theme, replace <span class="code">robbyrussell</span> with your desired theme. I, personally, prefer the cloud theme.</p>
+      <p>Now we will install Git, a widely used version control system. Git has a simple installation available through Homebrew. Copy and paste the line below (minus the comment) and you're done!</p>
+      <pre>
+        <code>
+          $ brew install git # Yes it's that easy.
+        </code>
+      </pre>
+      <p>Restart iTerm to be safe. I also suggest configuring Git using the following lines. These store your name and email with Git, set Atom as Git's default editor, and color code Git information.</p>
+      <pre>
+        <code>
+          $ git config --global user.name "YOURNAME" # Replace YOURNAMEHERE with your name.
+          $ git config --global user.email YOUREMAIL # Replace YOUREMAILHERE with your email.
+          $ echo "export EDITOR='atom -w'" >> ~/.zshrc # Restart iTerm after this one.
+          $ git config --global color.ui true
+        </code>
+      </pre>
+      <p>And you're done! Zsh and Git are successfully installed! Next we're going to install a few packages with Brew.</p>
+    </section>
+    <section>
+      <h2>Node and PostgreSQL</h2>
+      <p>Node.js and PostgreSQL are both important but different technologies. Node.js is a Javascript runtime, and PostgreSQL is a database system. I suggest installing both as they are widely used, also they're awesome and I love them both. Let's start with Node. To install node you just copy and paste the following line.</p>
+      <pre>
+        <code>
+          $ brew install node
+        </code>
+      </pre>
+      <p>And you're done! The Node Homebrew package installs the Javascript runtime and npm, which is node's package manager.</p>
+      <p>Now for PostgreSQL. To install Postgres, copy and paste the following brew install line.</p>
+      <pre>
+        <code>
+          $ brew install postgres
+        </code>
+      </pre>
+      <p>Homebrew makes it easy. From here you have to decide whether you want to keep Postgres running in the background or run it in an instance in your terminal. I prefer to run it in the background. To run it in the background just run the following line.</p>
+      <pre>
+        <code>
+          $ brew services start postgresql
+        </code>
+      </pre>
+      <p>Now Postgres will always run in the background, even if you restart your computer! I also suggest creating a default database with your username. Run `createdb $USER` in your terminal. This also helps the `psql` command, so that your computer has a default database to connect to. Postgres is now all setup!</p>
+    </section>
+    <section>
+      <h2>Ruby/Rails</h2>
+      <p>This one gets a little more complicated, let me explain why. A fresh install of MacOS come with Ruby already installed. If I retrieve my Ruby version in the terminal, I should get the following.</p>
     </section>
   </body>
 </html>
