@@ -2,89 +2,147 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>MacOS Developer Setup</title>
+    <title>MacOS Developer Environment Setup</title>
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
     <header>
-      <h1>MacOS Developer Setup Guide</h1>
-      <p>I used to hate the process of setting up my dev environment on a fresh computer, but with this guide, I've narrowed down the process to keep it simple and help people setup their new computers with ease. Let's get started!</p>
+      <div class="header-container">
+        <h1>Dev Environment Setup Guide for MacOS</h1>
+      </div>
     </header>
-    <section>
-      <h2>Getting Started with Homebrew</h2>
-      <p>You're going to need a fresh installation of MacOS, along with a user Admin account. I always start by installing <a href="https://brew.sh/">Homebrew</a>, an amazing package manager available on MacOS. Copy and paste the line below into your Terminal. You will be asked for your password at some point during the Homebrew install.</p>
-      <pre>
-        <code>
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        </code>
-      </pre>
-      <p>This will install Homebrew, as well as install Xcode's command line tools, which is Apple's GCC compiler. After the command has finished running, restart your terminal (this is not necessary but I do it to make sure Homebrew has successfully completed the installation).</p>
-    </section>
-    <section>
-      <h2>Applications</h2>
-      <p>Homebrew makes installing packages incredibly simple, but it also helps with installing applications! You can use `brew cask` to install applications without struggling to download disk images for every application. Below I will include lines to download a few of my applications of choice.</p>
-      <pre>
-        <code>
-  $ brew cask install atom # My text editor of choice, but you can use whatever you prefer.
-  $ brew cask install spectacle # For resizing windows with keystrokes. Very helpful.
-  $ brew cask install iterm2 # A better terminal with more options.
-  $ brew cask install alfred # A spotlight replacement.
-  $ brew cask install google-chrome # I suggest this for the Dev tools, also Chrome is just great in general.
-        </code>
-      </pre>
-    </section>
-    <section>
-      <h2>Zsh and Git</h2>
-      <p>Once you've installed the applications above, go ahead and quit Terminal and open iTerm2. We will be using iTerm2 as our terminal application from here on out. We will be using zsh instead of bash as our shell, as it's more customizable. We will be using <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh</a> to manage our zsh configuration. Copy and paste the line below to install and start using zsh. You will have to enter your password once during installation.</p>
-      <pre>
-        <code>
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-        </code>
-      </pre>
-      <p>After installation, you will be using zsh! A nice feature from Oh My Zsh is the ability to use themes. In your home directory <span class="code">~</span>, you will find a file called <span class="code">.zshrc</span>, which will hold all of your zsh configurations. On line 10, you will find <span class="code">ZSH_THEME="robbyrussell"</span>. You can choose your own theme from the <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">Oh My Zsh themes wiki</a> to style your shell as you wish! To change your theme, replace <span class="code">robbyrussell</span> with your desired theme. I, personally, prefer the cloud theme.</p>
-      <p>Now we will install Git, a widely used version control system. Git has a simple installation available through Homebrew. Copy and paste the line below (minus the comment) and you're done!</p>
-      <pre>
-        <code>
-  $ brew install git # Yes it's that easy.
-        </code>
-      </pre>
-      <p>Restart iTerm to be safe. I also suggest configuring Git using the following lines. These store your name and email with Git, set Atom as Git's default editor, and color code Git information.</p>
-      <pre>
-        <code>
-  $ git config --global user.name "YOURNAME" # Replace YOURNAMEHERE with your name.
-  $ git config --global user.email YOUREMAIL # Replace YOUREMAILHERE with your email.
-  $ echo "export EDITOR='atom -w'" >> ~/.zshrc # Restart iTerm after this one.
-  $ git config --global color.ui true
-        </code>
-      </pre>
-      <p>And you're done! Zsh and Git are successfully installed! Next we're going to install a few packages with Brew.</p>
-    </section>
-    <section>
-      <h2>Node and PostgreSQL</h2>
-      <p>Node.js and PostgreSQL are both important but different technologies. Node.js is a Javascript runtime, and PostgreSQL is a database system. I suggest installing both as they are widely used, also they're awesome and I love them both. Let's start with Node. To install node you just copy and paste the following line.</p>
-      <pre>
-        <code>
-  $ brew install node
-        </code>
-      </pre>
-      <p>And you're done! The Node Homebrew package installs the Javascript runtime and npm, which is node's package manager.</p>
-      <p>Now for PostgreSQL. To install Postgres, copy and paste the following brew install line.</p>
-      <pre>
-        <code>
-  $ brew install postgres
-        </code>
-      </pre>
-      <p>Homebrew makes it easy. From here you have to decide whether you want to keep Postgres running in the background or run it in an instance in your terminal. I prefer to run it in the background. To run it in the background just run the following line.</p>
-      <pre>
-        <code>
-  $ brew services start postgresql
-        </code>
-      </pre>
-      <p>Now Postgres will always run in the background, even if you restart your computer! I also suggest creating a default database with your username. Run `createdb $USER` in your terminal. This also helps the `psql` command, so that your computer has a default database to connect to. Postgres is now all setup!</p>
-    </section>
-    <section>
-      <h2>Ruby/Rails</h2>
-      <p>This one gets a little more complicated, let me explain why. A fresh install of MacOS come with Ruby already installed. If I retrieve my Ruby version in the terminal, I should get the following.</p>
-    </section>
+    <div class="container">
+      <section>
+        <h2>Getting Started with Homebrew</h2>
+        <p>You're going to need a fresh installation of MacOS, along with a user Admin account. I always start by installing <a href="https://brew.sh/">Homebrew</a>, an amazing package manager available on MacOS. Copy and paste the line below into your Terminal. You will be asked for your password at some point during the Homebrew install.</p>
+        <div class="code">
+            /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        </div>
+        <p>This will install Homebrew, as well as install Xcode's command line tools, which is Apple's GCC compiler. After the command has finished running, restart your terminal (this is not necessary but I do it to make sure Homebrew has successfully completed the installation).</p>
+      </section>
+      <section>
+        <h2>Applications</h2>
+        <p>Homebrew makes installing packages incredibly simple, but it also helps with installing applications! You can use `brew cask` to install applications without struggling to download disk images for every application. Below I will include lines to download a few of my applications of choice.</p>
+        <div class="code">
+          $ brew cask install <span class="install">atom</span> <span class="comment"># My text editor of choice, but you can use whatever you prefer.</span><br/>
+          $ brew cask install <span class="install">spectacle</span> <span class="comment"># For resizing windows with keystrokes. Very helpful.</span><br/>
+          $ brew cask install <span class="install">iterm2</span> <span class="comment"># A better terminal with more options.</span><br/>
+          $ brew cask install <span class="install">alfred</span> <span class="comment"># A spotlight replacement.</span><br/>
+          $ brew cask install <span class="install">google-chrome</span> <span class="comment"># I suggest this for the dev tools and extensions.</span>
+        </div>
+      </section>
+      <section>
+        <h2>Zsh and Git</h2>
+        <p>Once you've installed the applications above, go ahead and quit Terminal and open iTerm2. We will be using iTerm2 as our terminal application from here on out. We will be using zsh instead of bash as our shell, as it's more customizable. We will be using <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh</a> to manage our zsh configuration. Copy and paste the line below to install and start using zsh. You will have to enter your password once during installation.</p>
+        <div class="code">
+          sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        </div>
+        <p>After installation, you will be using zsh! A nice feature from Oh My Zsh is the ability to use themes. In your home directory <span class="inline-code">~</span>, you will find a file called <span class="inline-code">.zshrc</span>, which will hold all of your zsh configurations. On line 10, you will find <span class="inline-code">ZSH_THEME="robbyrussell"</span>. You can choose your own theme from the <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">Oh My Zsh themes wiki</a> to style your shell as you wish! To change your theme, replace <span class="inline-code">robbyrussell</span> with your desired theme. I, personally, prefer the cloud theme.</p>
+        <p>Now we will install Git, a widely used version control system. Git has a simple installation available through Homebrew. Copy and paste the line below (minus the comment) and you're done!</p>
+        <div class="code">
+          $ brew install <span class="install">git</span> <span class="comment"># Yes it's that easy.</span>
+        </div>
+        <p>Restart iTerm to be safe. I also suggest configuring Git using the following lines. These store your name and email with Git, set Atom as Git's default editor, and color code Git information.</p>
+        <div class="code">
+          $ git config --global user.name "YOURNAME"  <span class="comment"># Replace YOURNAMEHERE with your name.</span><br/>
+          $ git config --global user.email YOUREMAIL  <span class="comment"># Replace YOUREMAILHERE with your email.</span><br/>
+          $ echo "export EDITOR='atom -w'" >> ~/.zshrc  <span class="comment"># Restart iTerm after this one.</span><br/>
+          $ git config --global color.ui true
+        </div>
+        <p>And you're done! Zsh and Git are successfully installed! Next we're going to install a few packages with Brew.</p>
+      </section>
+      <section>
+        <h2>Node and PostgreSQL</h2>
+        <p>Node.js and PostgreSQL are both important but different technologies. Node.js is a Javascript runtime, and PostgreSQL is a database system. I suggest installing both as they are widely used, also they're awesome and I love them both. Let's start with Node. To install node you just copy and paste the following line.</p>
+        <div class="code">
+          $ brew install <span class="install">node</span>
+        </div>
+        <p>And you're done! The Node Homebrew package installs the Javascript runtime and npm, which is node's package manager.</p>
+        <p>Now for PostgreSQL. To install Postgres, copy and paste the following brew install line.</p>
+        <div class="code">
+          $ brew install <span class="install">postgres</span>
+        </div>
+        <p>Homebrew makes it easy. From here you have to decide whether you want to keep Postgres running in the background or run it in an instance in your terminal. I prefer to run it in the background. To run it in the background just run the following line.</p>
+        <div class="code">
+          $ brew services start <span class="install">postgresql</span>
+        </div>
+        <p>Now Postgres will always run in the background, even if you restart your computer! I also suggest creating a default database with your username. Run `createdb $USER` in your terminal. This also helps the `psql` command, so that your computer has a default database to connect to. Postgres is now all setup!</p>
+      </section>
+      <section>
+        <h2>Ruby/Rails</h2>
+        <p>This one gets a little more complicated, let me explain why. A fresh install of MacOS come with Ruby already installed. If I retrieve my Ruby version in the terminal, I should get the following.</p>
+        <div class="code">
+          $ ruby -v<br/>
+          <span class="comment">ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin16]</span>
+        </div>
+        <p>At first glance, this seems like it would be helpful, but that Ruby version is out of date. We need to be using Ruby-2.2 or above, as Rails 5 requires that version or above. The process we'll be using allows us to install multiple ruby versions and switch between them as needed. Let's get started!</p>
+      </section>
+      <section>
+        <h3>Ruby-Install</h3>
+        <p>We'll start by using ruby-install, a tool for installing Ruby versions. After that install, we'll be installing Ruby version 2.4.1, the latest stable release of Ruby. The lines below will walk you through this process. In your terminal, enter the following lines to install ruby-install and Ruby-2.4.1. The ruby-install command will take some time.</p>
+        <div class="code">
+          $ brew install <span class="install">ruby-install</span><br/>
+          $ ruby-install <span class="install">ruby 2.4.1</span>
+        </div>
+      </section>
+      <section>
+        <h3>Chruby</h3>
+        <p>Now we'll be installing Chruby, a tool for managing installed ruby versions. Let's start by installing it with Homebrew (isn't Homebrew so helpful?)</p>
+        <div class="code">
+          $ brew install <span class="install">chruby</span>
+        </div>
+        <p>Once you've installed chruby, use the following lines to configure zsh to use chruby and allow auto-switching between ruby versions.</p>
+        <div class="code">
+          $ echo 'source /usr/local/opt/chruby/share/chruby/chruby.sh' >> ~/.zshrc<br/>
+          $ echo 'source /usr/local/opt/chruby/share/chruby/auto.sh' >> ~/.zshrc<br/><br/>
+          <span class="comment"># Setting your computers default ruby version to 2.4.1</span><br/>
+          $ echo "ruby-2.4.1" > ~/.ruby-version<br/>
+          <span class="comment"># Used so that documentation is not installed when installing ruby gems.</span><br/>
+          $ echo "gem --no-ri --no-rdoc" > ~/.gemrc
+        </div>
+        <p>After you've run all of these commands, <strong>Restart your terminal</strong>, this is important for the process of installing Rails, which we will do next. When you reopen iTerm, run `ruby -v` and you should get your new Ruby version!</p>
+        <div class="code">
+          $ ruby -v<br/>
+          <span class="comment">ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin16]</span>
+        </div>
+      </section>
+      <section>
+        <h3>Rails</h3>
+        <p>This step can be very error prone. I suggest restarting your terminal before starting the Rails installation process. Rails is a web-application framework written in Ruby. It goes hand in hand with Ruby and I suggest it to anyone looking to learn a framework. Let's get started! At this point if you run `rails` in your terminal, you should get an error that looks like this.</p>
+        <div class="code">
+          $ rails<br/>
+          <span class="comment">Rails is not currently installed on this system. To get the latest version, simply type:<br/><br/>
+
+              <span class="code-tab">$ sudo gem install rails</span><br/><br/>
+
+          You can then rerun your "rails" command.</span>
+        </div>
+        <p><strong>Do not use that command</strong>, this is very important. When you run `sudo gem install rails`, it uses the system's default version of Ruby (which is 2.0.0) to install Rails. These versions are incompatible, and will give you a very hard time with your installation. Instead, run `$ gem install rails` in your terminal, <strong>without the sudo</strong>. This will install Rails 5 on your new Ruby version. <strong>Restart your terminal</strong> and try to create a new Rails app. You should get the following:</p>
+        <div class="code">
+          $ rails new project<br/>
+          <span class="comment"><span class="code-tab">create</span><br/>
+          <span class="code-tab">create  README.md</span><br/>
+          <span class="code-tab">create  Rakefile</span><br/>
+          <span class="code-tab">create  config.ru</span><br/>
+          <span class="code-tab">create  .gitignore</span><br/>
+          <span class="code-tab">create  Gemfile</span><br/>
+            <span class="code-tab-2">run  git init from "."</span><br/>
+          <span class="code-tab">etc..........</span></span>
+        </div>
+        <p>It worked! Rails is now successfully installed!</p>
+      </section>
+      <section>
+        <h3>Optional Setup for Rails</h3>
+        <p>If you plan on making Rails applications using PostgreSQL instead of SQLite, and using RSpec instead of the default testing library `test-unit`, use the following to configure your rails setup:</p>
+        <div class="code">
+          $ echo "-d postgresql -T" > ~/.railsrc
+        </div>
+        <p>Rails applications you create will use Postgres as the default database and not setup test-unit.</p>
+      </section>
+      <section>
+        <h2>You did it!</h2>
+        <p>I hope this helped setup your dev environment on MacOS. If you have anything you think I should add, please make a PR on the <a href="https://github.com/noahramey/macos-dev-setup">GitHub Repo</a>! I would love feedback of any kind.</p>
+      </section>
+    </div>
   </body>
 </html>

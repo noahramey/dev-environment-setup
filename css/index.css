@@ -6,41 +6,89 @@
   white: rgba(239, 230, 221, 1);
 }*/
 
+/*===============================*/
 
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
 body {
   margin: 0 auto;
-  max-width: 50em;
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 1.5;
-  padding: 4em 1em;
   color: rgba(239, 230, 221, 1);
   background: rgba(35, 31, 32, 1);
 }
 
-h2 {
+.container, .header-container {
+  margin: 0 auto;
+  max-width: 50em;
+}
+
+.container {
+  padding: 4em 1em;
+}
+
+h1:not(header h1), h2, h3 {
   margin-top: 1em;
   padding-top: 1em;
 }
 
-h1, h2, strong {
+h1, h2, h3, strong {
   color: rgba(126, 189, 194, 1);
 }
 
-code, pre {
+.code {
+  font-family: 'Menlo', serif;
+  font-size: 0.8em;
   color: rgba(243, 223, 162, 1);
-}
-
-code {
-  padding: 2px 4px;
-  vertical-align: text-bottom;
-}
-
-pre {
   padding: 1em;
+  vertical-align: text-bottom;
   border-left: 2px solid rgba(126, 189, 194, 1);
+  background: #322D2D;
+  border-bottom: 2px solid #443E3E;
 }
 
 a {
   color: rgba(187, 68, 48, 1);
+  text-decoration: none;
+}
+
+.comment {
+  color: #837D65;
+}
+
+.install {
+  color: rgba(187, 68, 48, 1);
+}
+
+.code-tab {
+  margin-left: 30px;
+}
+
+.code-tab-2 {
+  margin-left: 60px;
+}
+
+/*===================*/
+
+header {
+  max-width: 100%;
+  background: url('../wesson-wang-110739.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  margin: 0 0 0 0;
+  padding: 8vw 2em;
+  background-color: black;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+header h1 {
+  display: inline-block;
+  font-size: 2.5em;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  color: rgba(239, 230, 221, 1);
+  font-weight: 300;
+  margin-top: 100px;
 }
