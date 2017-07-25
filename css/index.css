@@ -16,6 +16,7 @@ body {
   line-height: 1.5;
   color: rgba(239, 230, 221, 1);
   background: rgba(35, 31, 32, 1);
+  font-size: 1.2em;
 }
 
 .container, .header-container {
@@ -98,4 +99,84 @@ header h1 {
   color: rgba(239, 230, 221, 1);
   font-weight: 300;
   margin-top: 100px;
+}
+
+.button {
+  border: 1px solid #d8dee9;
+  border-radius: 290486px;
+  padding: 1em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: none 200ms ease-out;
+  transition-property: color, background;
+}
+
+.button.github:hover {
+  background: #d8dee9;
+  border-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button.linkedin:hover {
+  background: #0077B5;
+  border-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button em {
+  display: block;
+  font-size: 0.6em;
+  font-style: normal;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b0bfc7;
+}
+
+.button strong {
+  color: #d8dee9;
+  font-weight: 500;
+  transition: color 200ms ease-out;
+}
+
+.button.linkedin strong {
+  color: #0077B5;
+}
+
+.button:hover strong {
+  color: #333 !important;
+}
+
+.buttons .button {
+  display: block;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 600px) {
+
+  .buttons {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 1em 0;
+    }
+
+    .buttons .button {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      margin-bottom: 0;
+      margin-right: 1em
+    }
+
+    .buttons .button:last-child {
+      margin-right: 0;
+    }
 }
