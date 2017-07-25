@@ -68,6 +68,13 @@ a {
   margin-left: 60px;
 }
 
+.inline-code {
+  background: #322D2D;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+  color: rgba(126, 189, 194, 1);
+}
+
 /*===================*/
 
 header {

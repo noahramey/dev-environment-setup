@@ -66,7 +66,7 @@
         <div class="code">
           $ brew services start <span class="install">postgresql</span>
         </div>
-        <p>Now Postgres will always run in the background, even if you restart your computer! I also suggest creating a default database with your username. Run `createdb $USER` in your terminal. This also helps the `psql` command, so that your computer has a default database to connect to. Postgres is now all setup!</p>
+        <p>Now Postgres will always run in the background, even if you restart your computer! I also suggest creating a default database with your username. Run <span class="inline-code">createdb $USER</span> in your terminal. This also helps the <span class="inline-code">psql</span> command, so that your computer has a default database to connect to. Postgres is now all setup!</p>
       </section>
       <section>
         <h2>Ruby/Rails</h2>
@@ -100,7 +100,7 @@
           <span class="comment"># Used so that documentation is not installed when installing ruby gems.</span><br/>
           $ echo "gem --no-ri --no-rdoc" > ~/.gemrc
         </div>
-        <p>After you've run all of these commands, <strong>Restart your terminal</strong>, this is important for the process of installing Rails, which we will do next. When you reopen iTerm, run `ruby -v` and you should get your new Ruby version!</p>
+        <p>After you've run all of these commands, <strong>Restart your terminal</strong>, this is important for the process of installing Rails, which we will do next. When you reopen iTerm, run <span class="inline-code">ruby -v</span> and you should get your new Ruby version!</p>
         <div class="code">
           $ ruby -v<br/>
           <span class="comment">ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin16]</span>
@@ -108,7 +108,7 @@
       </section>
       <section>
         <h3>Rails</h3>
-        <p>This step can be very error prone. I suggest restarting your terminal before starting the Rails installation process. Rails is a web-application framework written in Ruby. It goes hand in hand with Ruby and I suggest it to anyone looking to learn a framework. Let's get started! At this point if you run `rails` in your terminal, you should get an error that looks like this.</p>
+        <p>This step can be very error prone. I suggest restarting your terminal before starting the Rails installation process. Rails is a web-application framework written in Ruby. It goes hand in hand with Ruby and I suggest it to anyone looking to learn a framework. Let's get started! At this point if you run <span class="inline-code">rails</span> in your terminal, you should get an error that looks like this.</p>
         <div class="code">
           $ rails<br/>
           <span class="comment">Rails is not currently installed on this system. To get the latest version, simply type:<br/><br/>
@@ -117,7 +117,7 @@
 
           You can then rerun your "rails" command.</span>
         </div>
-        <p><strong>Do not use that command</strong>, this is very important. When you run `sudo gem install rails`, it uses the system's default version of Ruby (which is 2.0.0) to install Rails. These versions are incompatible, and will give you a very hard time with your installation. Instead, run `$ gem install rails` in your terminal, <strong>without the sudo</strong>. This will install Rails 5 on your new Ruby version. <strong>Restart your terminal</strong> and try to create a new Rails app. You should get the following:</p>
+        <p><strong>Do not use that command</strong>, this is very important. When you run <span class="inline-code">sudo gem install rails</span>, it uses the system's default version of Ruby (which is 2.0.0) to install Rails. These versions are incompatible, and will give you a very hard time with your installation. Instead, run <span class="inline-code">$ gem install rails</span> in your terminal, <strong>without the sudo</strong>. This will install Rails 5 on your new Ruby version. <strong>Restart your terminal</strong> and try to create a new Rails app. You should get the following:</p>
         <div class="code">
           $ rails new project<br/>
           <span class="comment"><span class="code-tab">create</span><br/>
@@ -133,7 +133,7 @@
       </section>
       <section>
         <h3>Optional Setup for Rails</h3>
-        <p>If you plan on making Rails applications using PostgreSQL instead of SQLite, and using RSpec instead of the default testing library `test-unit`, use the following to configure your rails setup:</p>
+        <p>If you plan on making Rails applications using PostgreSQL instead of SQLite, and using RSpec instead of the default testing library <span class="inline-code">test-unit</span>, use the following to configure your rails setup:</p>
         <div class="code">
           $ echo "-d postgresql -T" > ~/.railsrc
         </div>
